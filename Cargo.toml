@@ -57,9 +57,11 @@ futures-util = "0.3.29"
 maplit = "1.0.2"
 json = "0.12.4"
 
-jemallocator = "0.5.4"
+mimalloc = "0.1.48"
+#jemallocator = "0.5.4"
 once_cell = "1.19.0"
 itertools = "0.14.0"
 
 
 reqwest = "0.12.22"
+

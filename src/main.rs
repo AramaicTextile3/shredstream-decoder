@@ -1,5 +1,6 @@
 mod utils;
 mod address_lookup_table_cache;
+mod decoder;
 mod pumpfun_decoding;
 mod raydium_decoding;
 mod moonit_decoding;
@@ -34,11 +35,11 @@ use std::path::Path;
 use tracing::{info, warn, error, debug};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, fmt, EnvFilter};
 ////////////////////////////////////////////////////////////////////////////////
-use jemallocator::Jemalloc;
+use mimalloc::MiMalloc;
  
 
 #[global_allocator]
-static GLOBAL: Jemalloc = Jemalloc;
+static GLOBAL: MiMalloc = MiMalloc;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
