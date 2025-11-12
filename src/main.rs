@@ -1,14 +1,11 @@
 mod utils;
 mod address_lookup_table_cache;
 mod decoder;
-mod pumpfun_decoding;
 mod raydium_decoding;
 mod moonit_decoding;
 mod raydium_launchlab_decoding;
 mod raydium_cpmm_decoding;
-mod pumpamm_decoding;
 mod meteora_vcurve_decoding;
-mod boop_decoding;
 mod meteoradyn_decoding;
 mod meteora_amm_v2_decoding;
 mod shreds_processing;

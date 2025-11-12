@@ -12,7 +12,7 @@ pub const PUMPAMM_PROGRAM_ID: Pubkey = pubkey!("pAMMBay6oceH9fJKBRHGP5D4bD4sWpmS
 pub const PUMPAMM_CREATE_POOL_DISCRIMINATOR: [u8; 8] = [233, 146, 209, 142, 207, 104, 64, 188];
 pub const PUMPAMM_CREATE_POOL_V2_DISCRIMINATOR: [u8; 8] = [214, 144, 76, 236, 95, 139, 49, 180];
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug)]
 pub enum PumpAmmInstructionType {
     CreatePool,
     CreatePoolV2,
@@ -81,7 +81,6 @@ impl PumpAmmDecoder {
         is_signer: &[bool],
         is_writable: &[bool],
     ) -> Result<JsonValue, String> {
-        // Validate minimum data length: 8 (discriminator) + 2 (u16) + 8 (u64) + 8 (u64) + 32 (Pubkey) = 58 bytes
         if data.len() < 58 {
             return Err("Insufficient data for CreatePool instruction".to_string());
         }
